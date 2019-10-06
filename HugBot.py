@@ -56,4 +56,7 @@ while True:
                 except:
                     print("Comment processing produced an error. Trying to wait to resolve problem.", flush=True) #New accounts are rate limited
                     time.sleep(60)
-                    processComment(comment)
+                    try:
+                        processComment(comment)
+                    except:
+                        print("Failure! RATELIMIT is either too high or there is a fatal problem.", flush=True)
