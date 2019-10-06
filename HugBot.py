@@ -37,9 +37,10 @@ def processComment(comment):
     if commentID not in commentList:
         bodyText = comment.body
         if re.search(regexMatch, bodyText, re.IGNORECASE):
+            comment.reply("*Hug*")
             print("New comment posted.\n", flush=True)
             commentList.append(commentID)
-            comment.reply("*Hug*")
+
 
 while True:
     for sub in mentalHealthSubreddits:
